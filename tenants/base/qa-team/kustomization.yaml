@@ -1,7 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: apps2
+namespace: apps
 resources:
-- rbac.yaml
-- sync.yaml
+   - rbac.yaml
+   - sync.yaml
+   - kustomize.yaml
 
