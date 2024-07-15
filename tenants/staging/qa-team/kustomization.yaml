@@ -4,6 +4,6 @@ namespace: apps2
 resources:
   - ../../base/qa-team
   
-patches:
-  - path: qa-team-patch.yaml
+# patches:
+#   - path: qa-team-patch.yaml
 
