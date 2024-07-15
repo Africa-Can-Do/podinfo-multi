@@ -1,9 +1,4 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-namespace: apps
+
 resources:
-  - ../base/dev-team
-  - ../base/qa-team
-patches:
-  - path: dev-team-patch.yaml
-  - path: qa-team-patch.yaml
+- ./dev-team
+- ./qa-team
