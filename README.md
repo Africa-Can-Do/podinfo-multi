@@ -163,18 +163,18 @@ flux create tenant dev-team --with-namespace=apps \
 Create the sync manifests for the tenant Git repository:
 
 ```sh
-flux create source git dev-team \
-    --namespace=apps \
-    --url=https://github.com/<org>/<dev-team> \
+flux create source git qa-team \
+    --namespace=apps2 \
+    --url=https://github.com/Africa-Can-Do/qa-repo \
     --branch=main \
-    --export > ./tenants/base/dev-team/sync.yaml
+    --export > ./tenants/base/qa-team/sync.yaml
 
-flux create kustomization dev-team \
-    --namespace=apps \
-    --service-account=dev-team \
-    --source=GitRepository/dev-team \
+flux create kustomization qa-team \
+    --namespace=apps2 \
+    --service-account=qa-team \
+    --source=GitRepository/qa-team \
     --path="./" \
-    --export >> ./tenants/base/dev-team/sync.yaml
+    --export >> ./tenants/base/qa-team/sync.yaml
 ```
 
 Create the base `kustomization.yaml` file:
@@ -186,11 +186,11 @@ cd ./tenants/base/dev-team/ && kustomize create --autodetect --namespace apps
 Create the staging overlay and set the path to the staging dir inside the tenant repository:
 
 ```sh
-cat << EOF | tee ./tenants/staging/dev-team-patch.yaml
+cat << EOF | tee ./tenants/staging/qa-team-patch.yaml
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: dev-team
+  name: qa-team
   namespace: apps
 spec:
   path: ./staging
