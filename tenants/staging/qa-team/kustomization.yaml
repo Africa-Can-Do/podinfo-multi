@@ -6,4 +6,4 @@ resources:
   
 patches:
   - path: qa-team-patch.yaml
-  
+
