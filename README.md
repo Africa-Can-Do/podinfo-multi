@@ -165,7 +165,7 @@ Create the sync manifests for the tenant Git repository:
 ```sh
 flux create source git qa-team \
     --namespace=apps2 \
-    --url=https://github.com/Africa-Can-Do/qa-repo \
+    --url=https://github.com/Africa-Can-Do/qa-rep \
     --branch=main \
     --export > ./tenants/base/qa-team/sync.yaml
 

@@ -1,0 +1,4 @@
+resources:
+- kustomize.yaml
+- rbac.yaml
+- sync.yaml
