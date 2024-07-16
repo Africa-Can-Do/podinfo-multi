@@ -40,7 +40,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./infastructure/staging
+  path: ./infrastructure/staging
   prune: true
   sourceRef:
     kind: GitRepository
