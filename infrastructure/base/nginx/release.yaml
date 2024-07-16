@@ -13,4 +13,5 @@ spec:
         name: nginx
       interval: 1h
   interval: 1m  
+  serviceAccountName: helm-controller
   releaseName: nginx
