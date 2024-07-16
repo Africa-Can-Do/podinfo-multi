@@ -7,7 +7,7 @@ spec:
   interval: 1m0s
   path: ./infrastructure/staging
   prune: true
-  # serviceAccountName: kustomize-controller
+  serviceAccountName: kustomize-controller
   sourceRef:
     kind: GitRepository
     name: flux-system
