@@ -1,0 +1,25 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: test-team
+  namespace: test
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  url: https://github.com/Africa-Can-Do/qa-repo
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: test-team
+  namespace: test
+spec:
+  interval: 1m0s
+  path: ./
+  prune: false
+  serviceAccountName: test-team
+  sourceRef:
+    kind: GitRepository
+    name: test-team
